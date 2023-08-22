@@ -4,23 +4,30 @@ import java.util.Arrays;
 import java.util.Random;
 
 
-public class lab15_vec2 {
+public class lab15_fusionar_vectores {
 
-    public static int[] llenaVector(int[] vector){
-		System.out.println("LLenando vectores...");
-		for(int i=0; i < vector.length; i++){
-			vector[i] = new Random().nextInt(99);
+    public static int rand(int min, int max) {
+		
+        if (min > max || (max - min > Integer.MAX_VALUE)) {
+			throw new IllegalArgumentException("Rango inválido!");
 		}
-		return vector;
-    }
-    
+		return new Random().nextInt(max - min) + min;
+	}
+
     public static void main(String[] args){
         int [] vector_1 = new int[10];
         int [] vector_2 = new int[10];
         int [] fusion = new int[20];
 
-        llenaVector(vector_1);
-        llenaVector(vector_2);
+        // Llenar vectores
+        int min = -99;
+        int max = 99;
+		System.out.println("LLenando vectores...");
+		for(int i=0; i < vector_1.length; i++){
+			vector_1[i] = rand(min, max);
+            vector_2[i] = rand(min, max);
+		}
+
         System.out.println("Vector 1 >>> "+Arrays.toString(vector_1));
         System.out.println("Vector 2 >>> "+Arrays.toString(vector_2)+"\n");
 
