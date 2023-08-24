@@ -20,7 +20,8 @@ public class matriz {
 
         // Scanner in = new Scanner(System.in);
         int [][] mtz44 = new int[4][4];
-
+        
+        System.out.println("\n");
         System.out.println("Llenando matriz...");
         for (int i = 0; i < mtz44.length; i++) {
             for (int j = 0; j < mtz44[i].length; j++) {
