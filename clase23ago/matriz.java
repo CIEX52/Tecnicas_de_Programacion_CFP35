@@ -33,6 +33,7 @@ public class matriz {
         int [] sumCol = new int[mtz44.length];
 
         for (int i = 0; i < mtz44.length; i++) {
+            sumFil = 0;
             for (int j = 0; j < mtz44[i].length; j++){
                 sumFil+=mtz44[i][j];
                 sumCol[j]+= mtz44[i][j]; 
